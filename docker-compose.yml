@@ -283,6 +283,7 @@ services:
     container_name: wizarr
     image: ghcr.io/wizarrrr/wizarr:latest
     restart: unless-stopped
+    user: ${PUID}:${PGID}
     ports:
       - 5690:5690
     volumes:
