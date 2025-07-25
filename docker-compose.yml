@@ -79,7 +79,7 @@ services:
   
   #Readarr - Used to download books
   readarr:
-    image: lscr.io/linuxserver/readarr:develop
+    image: lscr.io/linuxserver/readarr:0.4.19-nightly
     container_name: readarr
     environment:
       - PUID=${PUID}
