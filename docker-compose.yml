@@ -97,7 +97,7 @@ services:
     
   #Lidarr - Used to download music 
   lidarr:
-    image: lscr.io/linuxserver/lidarr:latest
+    image: blampe/lidarr:latest
     container_name: lidarr
     environment:
       - PUID=${PUID}
