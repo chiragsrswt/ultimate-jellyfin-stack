@@ -494,3 +494,19 @@ services:
     networks:
       - jellystat
       - proxy
+  
+  janitorr:
+    container_name: janitorr
+    image: ghcr.io/schaka/janitorr:stable
+    user: ${PUID}:${PGID} # Replace with your user who should own your application.yml file
+    volumes:
+      - ${BASE_PATH}/janitorr/application.yml:/workspace/application.yml
+      - ${BASE_PATH}/janitorr/logs:/logs
+      - ${MEDIA_SHARE}:/data
+    healthcheck:
+      test: "wget -T5 -qO- http://localhost:8081/health | grep UP || exit 1"
+      start_period: 30s
+      interval: 5s
+      retries: 3
+    networks:
+      - starr
