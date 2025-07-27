@@ -25,6 +25,7 @@ This Plex Stack includes the following services:
 - **Homarr:** Used as a dashboard for docker containers with integrations for the *arr, torrent, and Jellyfin apps.
 - **Decluttarr:** Used to maintain/clean your *arr app queues and downloads.
 - **Jellystat:** Used to monitor the usage of each user or content on your jellyfin server.
+- **Janitorr:** Removes untagged media when it reaches a certain age, contains functionality for "Leaving Soon" content too.
 
 ![containers](https://github.com/user-attachments/assets/855014b1-2716-4370-975d-a02564df881e)
 
