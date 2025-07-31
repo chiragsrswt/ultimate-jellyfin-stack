@@ -26,6 +26,7 @@ This Plex Stack includes the following services:
 - **Decluttarr:** Used to maintain/clean your *arr app queues and downloads.
 - **Jellystat:** Used to monitor the usage of each user or content on your jellyfin server.
 - **Janitorr:** Removes untagged media when it reaches a certain age, contains functionality for "Leaving Soon" content too.
+- **Profilarr:** Profilarr is a quality profile management tool that configures your radarr/sonarr installations
 
 ![containers](https://github.com/user-attachments/assets/855014b1-2716-4370-975d-a02564df881e)
 
