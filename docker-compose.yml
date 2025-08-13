@@ -345,18 +345,14 @@ services:
     image: ghcr.io/cabernetwork/cabernet:latest
     container_name: cabernet
     restart: unless-stopped
+    network_mode: "service:gluetun"
     volumes:
       - ${BASE_PATH}/cabernet/extensions:/app/plugins_ext
       - ${BASE_PATH}/cabernet/data:/app/data
-    ports:
-      - 5004:5004/tcp
-      - 6077:6077/tcp
     environment:
       - TZ=${TZ}
       - PUID=${PUID}
       - PGID=${PGID}
-    networks:
-      - proxy
       
   gluetun:
     image: qmcgaw/gluetun:latest
@@ -384,7 +380,9 @@ services:
       - 5656:5656/tcp # kapowarr
       - 8191:8191/tcp # flaresolverr
       - 9696:9696/tcp # prowlarr
-      - 7474:7474 # autobrr
+      - 7474:7474/tcp # autobrr
+      - 5004:5004/tcp # cabernet
+      - 6077:6077/tcp # cabernet
     networks:
       - starr
       - proxy
